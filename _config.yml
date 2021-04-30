@@ -5,13 +5,19 @@ description: "The GeniePress framework"
 baseurl: ""
 url: ""
 twitter_username:
-github_username: geniepress
+github_username: GeniePress/framework
 theme: "just-the-docs"
 
 permalink: pretty
 
 # Enable or disable the site search
 # Supports true (default) or false
-search_enabled: false
+search_enabled: true
 
 heading_anchors: true
+
+aux_links:
+  "GeniePress on GitHub":
+    - "//github.com/GeniePress"
+
+aux_links_new_tab: true

@@ -4,7 +4,8 @@ title: Hooks & Filters
 parent: Reference
 ---
 
-# Hooks & Filters 
+# Hooks & Filters
+
 {: .no_toc }
 <details open markdown="block">
   <summary>
@@ -17,17 +18,18 @@ parent: Reference
 
 ## Main Usage
 
-You can use the `HookInto` utility to hook into actions and filters. Genie uses
-Reflection to work out how many parameters are being use in the closure or
-function
+You can use the `HookInto` utility to hook into actions and filters. GeniePress
+uses reflection to work out how many parameters are being use in the closure or
+callback
 
 ## Basic usage
 
 ```php
 use GeniePress\Utilities\HookInto;
+
 HookInto::action('init')
   ->run(function() {
-   // run something here
+     // run something here
   });
 ```
 
@@ -37,24 +39,23 @@ The default priority is 10.
 
 ```php
 use GeniePress\Utilities\HookInto;
+
 HookInto::action('init', 20)
   ->run(function() {
    // run something here
   });
 ```
-## Specifying Parameter count
-
-There's no need to do this as GeniePress uses reflection to count the 
-parameters in the callback or closure. 
 
 ## Using a callback
 
-any callable is accepted by the `run()` method.
+Any callable is accepted by the `run()` method.
 
 ```php
+use GeniePress\Debug;
 use GeniePress\Utilities\HookInto;
+
 HookInto::action('init', 20)
-  ->run( [\GeniePress\Debug::class, 'dd']);
+  ->run( [Debug::class, 'dd']);
 ```
 
 ## Multiple Hooks
@@ -64,6 +65,7 @@ or for filters `orFilter()`
 
 ```php
 use GeniePress\Utilities\HookInto;
+
 HookInto::action('init', 20)
   ->orAction('wp_loaded')
   ->run( function() { 
@@ -73,13 +75,14 @@ HookInto::action('init', 20)
 
 ## Filters
 
-rather than use action - you can use the `filter()` method:
+Rather than use action - you can use the `filter()` method.
 
 ```php
 use GeniePress\Utilities\HookInto;
+
 HookInto::filter('the_content')
     ->run( function($content) { 
-      // run something
+      // modify the content
       return $content;
   });
 ```

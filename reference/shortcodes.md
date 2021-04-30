@@ -5,6 +5,7 @@ parent: Reference
 ---
 
 # Shortcodes
+
 {: .no_toc }
 <details open markdown="block">
   <summary>
@@ -17,14 +18,13 @@ parent: Reference
 
 ## Main Usage
 
-You can use the `HookInto` utility to hook into actions and filters. Genie uses
-Reflection to work out how many parameters are being use in the closure or
-function
+You can use the `AddShortcode` utility to hook create shortcodes.
 
 ## Basic usage
 
 ```php
 use GeniePress\Utilities\AddShortcode;
+
 AddShortcode::called('test_me')
   ->run(function($attributes,$content) {
     // process your shortcode here
@@ -35,10 +35,12 @@ AddShortcode::called('test_me')
 
 ```php
 use GeniePress\Utilities\AddShortcode;
+use GeniePress\View;
+
 AddShortcode::called('user')
   ->run(function($attributes,$content) {
      
-    return \GeniePress\View::with('shortcodes/user.twig')
+    return View::with('shortcodes/user.twig')
       ->addVars([
          'user' => wp_get_current_user(),
          'attributes' => $attributes,
@@ -50,19 +52,19 @@ AddShortcode::called('user')
 The shortcode could be user :
 
 ```html
-Hello [user field=name ],
+<p>Hello [user field=name],</p>
 ```
 
-And the `shortcodes/user.twig` file
+and the `shortcodes/user.twig` file
 
 ```twig
 {% raw %}
 {% if attributes.field == 'name' and user.first_name %}
-  {{user.first_name}}
+  {{ user.first_name }}
 {% else %}
   there
 {% endif %}
 {% endraw %}
 ```
 
-Learn more about using Views
+Learn more about using [Views](../views/)

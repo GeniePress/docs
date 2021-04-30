@@ -1,0 +1,18 @@
+title: Genie Press
+email: sunil@lnk7.com
+description: "The GeniePress framework"
+baseurl: ""
+url: ""
+twitter_username:
+github_username: geniepress
+theme: "just-the-docs"
+plugins:
+  - jekyll-feed
+
+permalink: pretty
+
+# Enable or disable the site search
+# Supports true (default) or false
+search_enabled: false
+
+heading_anchors: true

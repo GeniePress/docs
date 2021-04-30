@@ -42,6 +42,10 @@ HookInto::action('init', 20)
    // run something here
   });
 ```
+## Specifying Parameter count
+
+There's no need to do this as GeniePress uses reflection to count the 
+parameters in the callback or closure. 
 
 ## Using a callback
 

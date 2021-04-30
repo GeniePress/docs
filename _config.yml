@@ -6,8 +6,6 @@ url: ""
 twitter_username:
 github_username: geniepress
 theme: "just-the-docs"
-plugins:
-  - jekyll-feed
 
 permalink: pretty
 

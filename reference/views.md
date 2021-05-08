@@ -18,7 +18,7 @@ parent: Reference
 ## Genie uses Twig
 
 Genie uses twig behind the scenes to ensure separation of concerns. By default,
-Genie looks for veiws in the `src/views` folder.
+Genie looks for views in the `src/twig` folder.
 
 ## Example Component using a View
 

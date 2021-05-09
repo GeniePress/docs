@@ -18,17 +18,44 @@ parent: Reference
 ## Introduction
 GeniePress provides a convenient way to handle ajax calls, including nonces.
 
-In our component `setup()` method we can register an ajax endpoint 
+## Enabling Ajax Handling
+
+When you initiate Genie, be sure to use the `enableAjaxHandler()` options
 
 ```php
+use GeniePress\Genie;
+use Theme\MyComponent;
+
+Genie::createPlugin()
+  ->enableAjaxHandler()
+  ->withComponents([
+    MyComponent::class
+  ])
+  ->start();
+```
+
+In our component's `setup()` method we can register an ajax endpoint 
+
+```php
+<?php
+
+namespace Theme;
+
 use GeniePress\Utilities\RegisterAjax;
-RegisterAjax::url('testimonial/create')
-    ->run(function ($name, $testimonial) {
-        // Do something
-        return [
-          'success' => true
-        ];       
-    });
+
+class MyComponent {
+
+    public static function setup() { 
+    
+        RegisterAjax::url('testimonial/create')
+            ->run(function ($name, $testimonial) {
+                // Save the testimonial
+                return [
+                  'success' => true
+                ];       
+            });
+    }
+}
 ```
 
 GeniePress uses reflection to determine what parameters are required in your callback (can be a closure, method or function).
@@ -97,6 +124,10 @@ Here's an example of sending data to the endpoint from jQuery in a WordPress tem
     });
 </script>
 ```
+
+**Note:** All ajax calls use the POST method. In future versions of GeniePress we will allow different verbs.
+
+
 {% endraw %}
 
 ## Throwing errors / Failing
@@ -118,4 +149,4 @@ RegisterAjax::url('testimonial/create')
         ];       
     });
 ```
-Your ajax call will need to handle a 400 error.  The data sent on the exception will be password in the response.
+Your ajax call will need to handle a 400 error.  The data sent on the exception will be passed in the response.

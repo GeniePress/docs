@@ -146,7 +146,7 @@ RegisterAjax::url('testimonial/create')
         
         return [
           'success' => true
-        ];       
+        ];        
     });
 ```
 Your ajax call will need to handle a 400 error.  The data sent on the exception will be passed in the response.

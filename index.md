@@ -12,7 +12,7 @@ Should we say - It's poetry reinvented?
 It makes plugin and theme development fun, while never having to mix html 
 and php again.  
 
-It's fluent and very laravelesque.
+It's fluent and very "laravelesque".
 
 The sample theme combines GeniePress with Vue and Tailwind, providing you 
 with a foundation for creating powerful theme.

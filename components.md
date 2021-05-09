@@ -3,7 +3,6 @@ layout: page
 title: Components
 nav_order: 3
 ---
-
 # Components
 {: .no_toc }
 <details open markdown="block">

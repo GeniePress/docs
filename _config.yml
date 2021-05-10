@@ -21,3 +21,5 @@ aux_links:
     - "//github.com/GeniePress"
 
 aux_links_new_tab: true
+
+ga_tracking: UA-146871386-5

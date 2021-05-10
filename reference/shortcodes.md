@@ -1,7 +1,7 @@
 ---
 layout: page 
-title: Shortcodes 
-parent: Reference
+title: Shortcodes
+nav_order: 20
 ---
 
 # Shortcodes

@@ -1,7 +1,7 @@
 ---
 layout: page 
-title: Hooks & Filters 
-parent: Reference
+title: Hooks & Filters
+nav_order: 20
 ---
 
 # Hooks & Filters

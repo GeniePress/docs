@@ -1,7 +1,7 @@
 ---
 layout: page 
-title: Views 
-parent: Reference
+title: Views
+nav_order: 20
 ---
 
 # Genie Views

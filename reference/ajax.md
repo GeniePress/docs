@@ -1,7 +1,7 @@
 ---
 layout: page 
 title: Ajax Handling
-parent: Reference
+nav_order: 20
 ---
 
 # Ajax Handling
@@ -20,7 +20,7 @@ GeniePress provides a convenient way to handle ajax calls, including nonces.
 
 ## Enabling Ajax Handling
 
-When you initiate Genie, be sure to use the `enableAjaxHandler()` options
+When you initiate Genie, be sure to use the `enableAjaxHandler()` option
 
 ```php
 use GeniePress\Genie;
@@ -126,7 +126,6 @@ Here's an example of sending data to the endpoint from jQuery in a WordPress tem
 ```
 
 **Note:** All ajax calls use the POST method. In future versions of GeniePress we will allow different verbs.
-
 
 {% endraw %}
 
